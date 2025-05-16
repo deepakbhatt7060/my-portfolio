@@ -70,9 +70,12 @@ const BodyContent = () => {
     const subject = "Inquiry About Hiring Deepak Bhatt";
     const body =
       "Hi Deepak Bhatt,\n\nI came across your portfolio and would like to discuss a potential opportunity. Looking forward to connecting with you.\n\nBest regards,\n";
-    window.location.href = `mailto:${email}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
+
+    const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+      email
+    )}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.open(gmailURL, "_blank");
   };
 
   const handleDownload = () => {
