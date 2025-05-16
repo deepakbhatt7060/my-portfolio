@@ -27,6 +27,7 @@ const Common = ({
         display: "flex",
         gap: 40,
         flexDirection: "row",
+        marginBottom: "20px",
         flexWrap: "wrap",
       }}
     >

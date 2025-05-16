@@ -3,11 +3,21 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { Typography } from "@mui/material";
 import Container from "@/components/shared/Container/Container";
 import { useNavigation } from "@/context/Provider";
-import React from "react";
-import { isMobile } from "react-device-detect";
+import React, { useEffect, useState } from "react";
+import { isMobile as deviceDetectIsMobile } from "react-device-detect";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   const { loading } = useNavigation();
+  const [isClient, setIsClient] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+    setIsMobile(deviceDetectIsMobile);
+  }, []);
+
+  if (!isClient) return null;
+
   return (
     <>
       {!isMobile ? (
@@ -28,14 +38,13 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
             textAlign: "center",
           }}
         >
-          <div>
-            <Typography variant="h6">
-              Mobile version coming soon! Please visit us on a desktop for now.
-            </Typography>
-          </div>
+          <Typography variant="h6">
+            Mobile version coming soon! Please visit us on a desktop for now.
+          </Typography>
         </Container>
       )}
     </>
   );
 };
+
 export default MainLayout;

@@ -7,7 +7,7 @@ import useInvertedIntersection from "@/hooks/useInvertedIntersection";
 const Experience = () => {
   const { activeExperience, setActiveExperience } = useNavigation();
   const { triggerRef, intersecting } = useInvertedIntersection({
-    rootMargin: "70px 0px 0px 0px",
+    rootMargin: "40px 0px 0px 0px",
     threshold: 0,
   });
   const experience = [
@@ -90,7 +90,6 @@ const Experience = () => {
                 justifyContent: "flex-start",
                 padding: 2,
                 gap: 2,
-                marginBottom: 2,
                 minHeight: 500,
               }}
             >

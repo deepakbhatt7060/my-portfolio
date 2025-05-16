@@ -11,7 +11,7 @@ import DownloadButton from "@/components/shared/Download/DownloadButton";
 const Achievements = () => {
   const { activeAchievements, setActiveAchievements } = useNavigation();
   const { triggerRef, intersecting } = useInvertedIntersection({
-    rootMargin: "70px 0px 0px 0px",
+    rootMargin: "40px 0px 0px 0px",
     threshold: 0,
   });
   const achievements = [

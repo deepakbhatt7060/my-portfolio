@@ -37,7 +37,7 @@ const Index = () => {
   const scrollingBodyRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const { triggerRef, intersecting } = useInvertedIntersection({
-    rootMargin: "70px 0px 0px 0px",
+    rootMargin: "50px 0px 0px 0px",
     threshold: 0,
   });
 
@@ -70,13 +70,13 @@ const Index = () => {
       <div
         style={{
           position: "relative",
-          height: "100vh",
+          height: isInteractive ? "100vh" : "",
           overflow: isInteractive ? "hidden" : "",
         }}
       >
         <Header intersecting={intersecting} ref={headerRef} />
         <div ref={triggerRef} style={{ height: 1 }} />
-        <ScrollingBody ref={scrollingBodyRef}>
+        <ScrollingBody ref={scrollingBodyRef} style={{ marginBottom: "20px" }}>
           <ScrollingSection>
             <BodyContent />
             <DobContainer>Since 1997</DobContainer>
@@ -108,7 +108,7 @@ const Index = () => {
           sx={{
             display: "flex",
             position: "fixed",
-            top: "300px",
+            top: "250px",
             flexWrap: "wrap",
             flexDirection: "column",
             justifyContent: "center",
