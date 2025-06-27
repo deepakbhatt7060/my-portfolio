@@ -9,6 +9,8 @@ My Portfolio as Frontend Heavy Full Stack Developer
 - Working Experience
 - Achievements and Certifications
 - Contact
+- Download Resume
+- Mail to Hire
 
 ## 🖼️ Demo (or Screenshots)
 - ![Home](images/Home.png)
